@@ -2004,7 +2004,7 @@ function change_mirrors_RedHat() {
     "${SYSTEM_ALMALINUX}")
         case "${SYSTEM_VERSION_NUMBER_MAJOR}" in
         9)
-            sed -e "s|^# baseurl=http|baseurl=${WEB_PROTOCOL}|g" \
+            sed -e "s|^# baseurl=http\(s\)\?|baseurl=${WEB_PROTOCOL}|g" \
                 -e "s|^mirrorlist=|#mirrorlist=|g" \
                 -e "s|repo.almalinux.org/vault|${SOURCE_VAULT:-"${SOURCE}"}/${SOURCE_VAULT_BRANCH:-"almalinux-vault"}|g" \
                 -e "s|repo.almalinux.org/almalinux|${SOURCE}/${SOURCE_BRANCH}|g" \
